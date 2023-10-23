@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Picker</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Creepster&family=Quintessential&family=Rye&family=UnifrakturMaguntia&family=Kranky&family=Nosifer&family=Noto+Sans+Rubic&family=Noto+Color+Emoji&family=Dancing+Script&family=Fuggles&family=Indie+Flower&family=Kalam&family=Montserrat:wght@100&family=Permanent+Marker&family=Poppins&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9f71dab2a2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="colors">
+            <span onclick="changeColor('#f61207')" style="--clr:red;"></span>
+            <span onclick="changeColor('#f65007')" style="--clr:orange;"></span>
+            <span onclick="changeColor('#f6e507')" style="--clr:yellow;"></span>
+            <span onclick="changeColor('#0bf607')" style="--clr:green;"></span>
+            <span onclick="changeColor('#0b07f6')" style="--clr:blue;"></span>
+            <span onclick="changeColor('#9407f6')" style="--clr:purple;"></span>
+        </div>
+        <div class="box"></div>
+        <script>
+            let box = document.querySelector('.box');
+            function changeColor (color) {
+                box.style.background = color;
+                document.querySelectorAll('span').forEach(function(item) {
+                    item.classList.remove('active')
+                });
+                event.target.classList.add('active');
+            }
+        </script>
+    </body>
+</html>
